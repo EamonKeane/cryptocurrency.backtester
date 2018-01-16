@@ -31,13 +31,13 @@ def logic(algo, data):
     long = algo.MA_FUNC(data['close'].values, timeperiod=algo.LONG)
 
     if short[-1] > long[-1] and short[-2] < long[-2]:
-        # print(today.name, 'BUY signal')
+        print(today.name, 'BUY signal')
         entry_capital = algo.account.buying_power
         if entry_capital >= 0:
             algo.account.enter_position('Long', entry_capital, current_price)
 
     if short[-1] < long[-1] and short[-2] > long[-2]:
-        # print(today.name, 'SELL signal')
+        print(today.name, 'SELL signal')
         for position in algo.account.positions:
             if position.type_ == 'Long':
                 algo.account.close_position(position, 1, current_price)

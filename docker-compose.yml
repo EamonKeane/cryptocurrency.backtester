@@ -1,0 +1,13 @@
+version: "3.0"
+services:
+  python3:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/crypto-backtest
+    environment:
+      - PYTHONPATH=/crypto-backtest:/crypto-backtest/src:/crypto-backtest/src/data:crypto-backtest/gemini
+    ports:
+      - 8891:8888
+    command: ["jupyter", "notebook", "--ip=0.0.0.0", "--allow-root"]

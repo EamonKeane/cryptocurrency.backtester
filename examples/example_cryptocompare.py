@@ -40,7 +40,7 @@ def logic(algo, data):
 
 
 pair = ['BTC', 'USD']  # Use ETH pricing data on the BTC market
-days_history = 900  # From there collect X days of data
+days_history = 200  # From there collect X days of data
 exchange = 'Bitstamp'
 
 # Request data from cryptocompare.com
@@ -48,7 +48,7 @@ df = cc.load_dataframe(pair, days_history, exchange)
 
 # Algorithm settings
 sim_params = {
-    'capital_base': 10000,
+    'capital_base': 10,
     'fee': {
         'Long': 0.0025,
         'Short': 0.0025,
