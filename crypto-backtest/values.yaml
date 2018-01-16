@@ -5,7 +5,7 @@ replicaCount: 1
 image:
   repository: quay.io/logistio/crypto-backtest
   tag: latest
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
 service:
   name: cyrpto-backtest
   type: LoadBalancer
