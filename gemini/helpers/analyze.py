@@ -5,6 +5,7 @@ import bokeh.plotting
 import matplotlib.pyplot as plt
 import pandas as pd
 from bokeh.models import LinearAxis, Range1d
+from bokeh.io import output_notebook
 
 logger = logging.getLogger(__name__)
 
@@ -77,7 +78,7 @@ def analyze_bokeh(algo, title=None, show_trades=False):
                 p.circle(x, y, size=6, color='blue', alpha=0.5)
             elif trade.type_ == 'Short':
                 p.circle(x, y, size=6, color='orange', alpha=0.5)
-
+    output_notebook()
     bokeh.plotting.show(p)
 
 

@@ -8,5 +8,7 @@ dependencies:
 - psycopg2
 - pip:
   - TA-Lib==0.4.15
+  - bokeh==0.12.13
+  - empyrical==0.3.3
   - tornado==4.5.3
   - jupyter_contrib_nbextensions==0.3.3

@@ -18,9 +18,6 @@ def logic(algo, data):
 
     today = data.iloc[-1]  # Current candle
     yesterday = data.iloc[-2]  # Previous candle
-    print(today)
-    print(today['close'])
-    print(yesterday['close'])
 
     # close positions
     if len(algo.account.positions) > 0:

@@ -8,8 +8,8 @@ def get_historical_data_from_file(base_currency, other_currency, frequency, star
        file_name = '_'.join([file_prefix, base_currency, other_currency]) + '.csv'
        extension = '.csv'
 
-       full_file_name = '/'.join([root_folder, data_folder, file_name])
-
+       #full_file_name = '/'.join([root_folder, data_folder, file_name])
+       full_file_name = '/'.join(['/crypto-backtest/data/01.01.2017-12.01.2018', file_name])
        cols = ['index', 'type', 'rate', 'volume']
 
        df = pd.read_csv(full_file_name, names=cols, index_col=0, parse_dates=True)
