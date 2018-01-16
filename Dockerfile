@@ -35,5 +35,9 @@ RUN jupyter contrib nbextension install --system
 RUN pip install matplotlib
 # Change working directory to the notebook directory for interactive use
 WORKDIR $PROJECT_FOLDER/examples
+
+ENV PYTHONPATH=/crypto-backtest:/crypto-backtest/src:/crypto-backtest/src/data:crypto-backtest/gemini
+EXPOSE 8888
+
 #ENTRYPOINT ["/bin/bash"]
-CMD /bin/bash
+CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--allow-root"]

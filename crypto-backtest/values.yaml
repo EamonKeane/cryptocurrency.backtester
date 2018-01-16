@@ -3,14 +3,14 @@
 # Declare variables to be passed into your templates.
 replicaCount: 1
 image:
-  repository: nginx
-  tag: stable
+  repository: quay.io/logistio/crypto-backtest
+  tag: latest
   pullPolicy: IfNotPresent
 service:
-  name: nginx
-  type: ClusterIP
-  externalPort: 80
-  internalPort: 80
+  name: cyrpto-backtest
+  type: LoadBalancer
+  externalPort: 8888
+  internalPort: 8888
 ingress:
   enabled: false
   # Used to create an Ingress record.
